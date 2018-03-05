@@ -730,6 +730,7 @@ def read_partial(fileobj, stop_when=None, defer_size=None,
             #   and hope for the best (big endian is retired anyway)
             if group >= 1024:
                 is_little_endian = False
+        file_meta_dataset.TransferSyntaxUID = pydicom.uid.ImplicitVRLittleEndian
     elif transfer_syntax == pydicom.uid.ImplicitVRLittleEndian:
         pass
     elif transfer_syntax == pydicom.uid.ExplicitVRLittleEndian:
